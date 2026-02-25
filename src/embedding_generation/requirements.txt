@@ -1,0 +1,13 @@
+# Core dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+
+# For discriminative models (SentenceTransformers)
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# For generative models (vLLM + Qwen)
+vllm>=0.4.0
+
+# Serialization
+# pickle is built-in, no need to install

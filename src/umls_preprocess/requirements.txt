@@ -1,0 +1,9 @@
+# UMLS Preprocessing Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+pandas>=1.5.0
+jsonlines>=3.0.0
+
+# Optional but recommended for better performance
+# tqdm>=4.64.0  # Uncomment for progress bars

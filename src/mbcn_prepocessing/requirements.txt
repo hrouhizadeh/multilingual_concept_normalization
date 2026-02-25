@@ -1,0 +1,12 @@
+# Dataset Preprocessing Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependencies
+pandas>=1.5.0
+scikit-learn>=1.0.0
+openpyxl>=3.0.0      # For reading Excel files
+xlrd>=2.0.0          # For reading .xls files
+numpy>=1.21.0
+
+# Optional but recommended
+# tqdm>=4.64.0        # Uncomment for progress bars
