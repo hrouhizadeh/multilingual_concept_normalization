@@ -232,7 +232,7 @@ for model_alias in models_to_run:
 
 The input CSV file should have the following structure:
 
-| word | CUI | ENG | FRE | ... | SNOMED | ICD10 | ... |
+| term | CUI | ENG | FRE | ... | SNOMED | ICD10 | ... |
 |------|-----|-----|-----|-----|--------|-------|-----|
 | diabetes | ["C0011847"] | 1 | 0 | ... | 1 | 1 | ... |
 | hypertension | ["C0020538"] | 1 | 1 | ... | 1 | 0 | ... |
