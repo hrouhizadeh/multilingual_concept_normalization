@@ -36,7 +36,7 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 
 | Module | Description |
 |--------|-------------|
-| [`umls_preprocessing`](./umls_preprocessing/) | Extract definitions, semantic types, hierarchies, and preferred terms from UMLS RRF files |
+| [`umls_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | Extract definitions, semantic types, hierarchies, and preferred terms from UMLS RRF files |
 | [`dataset_preprocessing`](./dataset_preprocessing/) | Convert 10 biomedical NER/normalization datasets into a unified CSV format |
 | [`bm25_retrieval`](./bm25_retrieval/) | BM25-based candidate retrieval using Elasticsearch |
 | [`generating_embeddings`](./generating_embeddings/) | Generate UMLS term embeddings with generative (Qwen) and discriminative (E5, BGE) models |
