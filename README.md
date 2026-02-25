@@ -9,7 +9,7 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 │  1. UMLS             │     │  2. Dataset              │
 │     Preprocessing    │────▶│     Preprocessing        │
 │                      │     │                          │
-│  RRF files → JSON    │     │  10 datasets → unified   │
+│  .RRF files → JSON    │     │  10 datasets → unified   │
 │  (definitions,       │     │  CSV format              │
 │   hierarchies, etc.) │     │                          │
 └─────────────────────┘     └────────────┬─────────────┘
