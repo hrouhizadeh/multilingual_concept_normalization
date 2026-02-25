@@ -69,8 +69,6 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 ### Installation
 
 ```bash
-git clone https://github.com/<your-username>/nlu4ehr.git
-cd nlu4ehr
 pip install -r requirements.txt
 ```
 
@@ -96,7 +94,7 @@ cd dataset_preprocessing
 python run_all.py
 ```
 
-Outputs unified CSVs with columns: `term`, `code`, `language`, `semantic_type`, `semantic_group`, `exact_match`, `source`.
+Outputs unified CSVs with columns: `term`, `code`, `language`, `semantic_group`, `exact_match`, `source`.
 
 #### Step 3a — BM25 Retrieval
 
