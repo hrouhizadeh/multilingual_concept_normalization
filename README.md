@@ -6,16 +6,16 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 
 ```
 ┌─────────────────────┐     ┌──────────────────────────┐
-│  1. UMLS             │     │  2. Dataset              │
-│     Preprocessing    │────▶│     Preprocessing        │
-│                      │     │                          │
-│  .RRF files → JSON    │     │  10 datasets → unified   │
-│  (definitions,       │     │  CSV format              │
-│   hierarchies, etc.) │     │                          │
+│  1. UMLS            │     │  2. Dataset              │
+│     Preprocessin    │────▶│     Preprocessing        │
+│                     │     │                          │
+│  .RRF files → JSON  │     │  10 datasets → unified   │
+│  (definitions,      │     │  CSV format              │
+│   hierarchies, etc.)│     │                          │
 └─────────────────────┘     └────────────┬─────────────┘
                                          │
                             ┌────────────▼─────────────┐
-                            │  3. Candidate Retrieval   │
+                            │  3. Candidate Retrieval  │
                             │                          │
                             │  ┌─────────┐ ┌────────┐  │
                             │  │  BM25   │ │ Dense  │  │
