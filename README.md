@@ -133,7 +133,7 @@ Runs a full experiment grid over top-k values × feature combinations × retriev
 ## Repository Structure
 
 ```
-nlu4ehr/
+/
 ├── README.md                          # This file
 ├── requirements.txt
 │
