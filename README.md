@@ -13,13 +13,13 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 | Module | Description |
 |--------|-------------|
 | [`umls_preprocess`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/umls_preprocess) | Extract definitions, synonyms, semantic groups, hierarchies, and preferred terms from UMLS RRF files |
-| [`dataset_prepocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/dataset_prepocessing) | Convert 10 biomedical concept normalization datasets into a unified format |
+| [`dataset_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/dataset_prepocessing) | Convert 10 biomedical concept normalization datasets into a unified format |
 | [`bm25`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | BM25-based candidate retrieval using Elasticsearch |
 | [`embedding_generation`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/embedding_generation) | Generate UMLS term embeddings with generative and discriminative large language models |
 | [`LLMs_as_rerankers`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/LLMs_as_rerankers) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
 
 
-## Supported Datasets
+## Supported datasets
 
 | Dataset | Language | Ontology |
 |---------|----------|----------|
