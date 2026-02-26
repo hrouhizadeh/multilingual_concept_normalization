@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UMLS Hierarchy Extractor
+UMLS hierarchy extractor
 
 Extracts hypernym/hyponym (parent/child) relationships from UMLS MRREL.RRF file.
 
