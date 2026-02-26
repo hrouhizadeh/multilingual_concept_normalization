@@ -15,7 +15,7 @@ The reranker operates as **Stage 4** of the normalization pipeline:
 
 ### Hardware
 
-- GPU with sufficient VRAM for the target model (e.g., ~80 GB for Qwen3-32B)
+- GPU with sufficient VRAM for the target model
 
 ### Software
 
@@ -50,8 +50,6 @@ CSV files from the dense retrieval stage with at minimum these columns:
 | `code` | Gold-standard CUI |
 | `retrieved_codes` | List of candidate CUIs (as string) |
 | `retrieved_terms` | List of candidate term strings (as string) |
-| `retrieved_scores` | List of retrieval similarity scores (as string) |
-| `exact_match` | Whether the term was an exact match (0/1) |
 | `target_ontologies` | Target ontology for normalization |
 | `semantic_group` | Semantic group of the query term |
 
@@ -103,7 +101,7 @@ Available features: `preferred_term`, `synonyms`, `semantic_groups`, `definition
 Control how many synonyms and hierarchy terms are included per candidate:
 
 ```bash
-python rerank.py --max-synonyms 10 --max-hierarchy 8
+python rerank.py --max-synonyms 10 --max-hierarchy 10
 ```
 
 ### Process specific models and splits
