@@ -1,4 +1,4 @@
-# UMLS Preprocessing
+# UMLS preprocessing
 
 A collection of Python scripts to extract and preprocess data from UMLS (Unified Medical Language System) RRF files into JSON format for downstream NLP tasks.
 
@@ -20,12 +20,12 @@ This module processes UMLS RRF (Rich Release Format) files and generates JSON ou
 
 You need a UMLS license to download the data:
 
-1. **Create a UMLS Account**: Go to [UMLS Terminology Services](https://uts.nlm.nih.gov/uts/) and sign up
-2. **Request a License**: Complete the license agreement
+1. **Create a UMLS account**: Go to [UMLS Terminology Services](https://uts.nlm.nih.gov/uts/) and sign up
+2. **Request a license**: Complete the license agreement
 3. **Download UMLS**: Go to [UMLS Knowledge Sources](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html)
 4. **Extract the files**: After downloading, extract the `META` folder containing the `.RRF` files
 
-### 2. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -37,7 +37,7 @@ Required packages:
 
 ## Setup
 
-### 1. Clone/Copy this folder to your project
+### 1. Clone/copy this folder to your project
 
 ```bash
 # If part of a larger project
@@ -68,13 +68,13 @@ python config.py  # Shows configuration and file status
 
 Example output:
 ```
-UMLS Preprocessing Configuration
+UMLS preprocessing configuration
 ================================
-Project Root:     /path/to/umls_preprocessing
-UMLS META Dir:    /path/to/umls_preprocessing/data/umls/META
-Output Dir:       /path/to/umls_preprocessing/output
+Project root:     /path/to/umls_preprocessing
+UMLS META dir:    /path/to/umls_preprocessing/data/umls/META
+Output dir:       /path/to/umls_preprocessing/output
 
-Input Files:
+Input files:
   MRCONSO.RRF:    /path/to/.../MRCONSO.RRF ✓
   MRDEF.RRF:      /path/to/.../MRDEF.RRF ✓
   MRREL.RRF:      /path/to/.../MRREL.RRF ✓
@@ -84,7 +84,7 @@ Input Files:
 
 ## Usage
 
-### Run All Scripts
+### Run all scripts
 
 ```bash
 # Run all preprocessing scripts in sequence
@@ -97,7 +97,7 @@ python run_all.py --check
 python run_all.py --skip-all-terms
 ```
 
-### Run Individual Scripts
+### Run individual scripts
 
 Each script can be run independently:
 
@@ -226,7 +226,7 @@ For systems with limited RAM, run `extract_all_terms.py` separately or skip it:
 python run_all.py --skip-all-terms
 ```
 
-## Project Structure
+## Project structure
 
 ```
 umls_preprocessing/
@@ -255,29 +255,6 @@ umls_preprocessing/
     ├── extract_hierarchies.py
     ├── extract_preferred_terms.py
     └── extract_all_terms.py
-```
-
-## Troubleshooting
-
-### "File not found" errors
-
-Ensure UMLS files are in the correct location:
-```bash
-ls -la data/umls/META/
-```
-
-### Memory errors
-
-For `extract_all_terms.py`, try:
-1. Close other applications
-2. Use a machine with more RAM
-3. Skip this script with `--skip-all-terms`
-
-### Encoding errors
-
-All scripts use UTF-8 encoding. If you encounter issues:
-```bash
-file data/umls/META/MRCONSO.RRF  # Check file encoding
 ```
 
 ## License
