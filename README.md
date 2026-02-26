@@ -43,11 +43,6 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 - Elasticsearch (for BM25 retrieval)
 - GPU(s) (for embedding generation and LLM reranking)
 
-### Installation
-
-```bash
-pip install -r requirements.txt
-```
 
 ### Step-by-Step usage
 
