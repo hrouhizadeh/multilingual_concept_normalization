@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UMLS Semantic Type Extractor
+UMLS semantic group/type extractor
 
 Creates a JSON file mapping UMLS CUIs to semantic types and groups.
 
