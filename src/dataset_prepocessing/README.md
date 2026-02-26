@@ -7,25 +7,25 @@ Preprocessing scripts for 10 concept normalization datasets across 5 languages. 
 | Dataset | Language | Target Ontology | Source |
 |---------|----------|-----------------|--------|
 | BC5CDR | English | MeSH | [BioCreative V](https://github.com/JHnlp/BioCreative-V-CDR-Corpus) |
-| N2C2 | English | RxNorm, SNOMED | [n2c2 2019 challenge](https://n2c2.dbmi.hms.harvard.edu/2019-track-3) |
+| N2C2 | English | RxNorm, SNOMED CT| [n2c2 2019 challenge](https://n2c2.dbmi.hms.harvard.edu/2019-track-3) |
 | Quaero | French | UMLS | [QUAERO corpus](https://quaerofrenchmed.limsi.fr/) |
-| MedUCD | French | ATC | [atih](https://www.atih.sante.fr/unites-communes-de-dispensation-prises-en-charge-en-sus) |
+| Med-UCD | French | ATC | [atih](https://www.atih.sante.fr/unites-communes-de-dispensation-prises-en-charge-en-sus) |
 | DisTEMIST | Spanish | SNOMED CT | [DisTEMIST](https://temu.bsc.es/distemist/) |
 | Pharma | Spanish | SNOMED CT | [PharmaCoNER](https://temu.bsc.es/pharmaconer/)|
-| BRONCO | German | ATC, ICD-10 | [BRONCO150](https://www2.informatik.hu-berlin.de/~leser/bronco/index.html) |
+| BRONCO | German | ATC, ICD-10 | [BRONCO](https://www2.informatik.hu-berlin.de/~leser/bronco/index.html) |
 | TLLV | Turkish | LOINC | Turkish lab test mappings |
-| MANTRA-GSC | Multilingual | MedDRA, MeSH, SNOMED | [A multilingual gold-standard corpus for biomedical concept recognition](https://pmc.ncbi.nlm.nih.gov/articles/PMC4986661/) |
+| MANTRA-GSC | Multilingual | MedDRA, MeSH, SNOMED  CT| [A multilingual gold-standard corpus for biomedical concept recognition](https://pmc.ncbi.nlm.nih.gov/articles/PMC4986661/) |
 | XL-BEL | Multilingual | UMLS | [XL-BEL](https://github.com/cambridgeltl/sapbert/tree/main/evaluation) |
 
 ## Prerequisites
 
-### 1. Process UMLS data first
+### 1. Process the UMLS data first
 
 This module depends on outputs from the `umls_preprocessing` module. Make sure you have:
 
 1. Run the UMLS preprocessing scripts
 2. Generated the required JSON files:
-   - `cui_semantic_mapping.json` - Semantic type mappings
+   - `cui_semantic_mapping.json` - Semantic group mappings
    - `word_mapping_onto.json` - Term to ontology mappings  
    - `cui_codes.json` - List of valid CUI codes
    - Vocabulary mapping files (`mesh_map.json`, `snomed_map.json`, etc.)
@@ -47,7 +47,7 @@ Required packages:
 
 Download each dataset from its source and place it in the appropriate directory.
 
-Note that n2c2 and bronco150 datasets are not publicly available. You must follow the instructions by the respective data providers to request access: for n2c2, register at https://n2c2.dbmi.hms.harvard.edu/ and sign a DUA; for BRONCO150, contact the dataset creators to obtain permission (https://www2.informatik.hu-berlin.de/~leser/bronco/index.html).
+Note that the N2C2 and BRONCO datasets are not publicly available. You must follow the instructions by the respective data providers to request access: for N2C2, register at https://n2c2.dbmi.hms.harvard.edu/ and sign a DUA; for BRONCO, contact the dataset creators to obtain permission (https://www2.informatik.hu-berlin.de/~leser/bronco/index.html).
 
 
 
@@ -112,7 +112,7 @@ UMLS_OUTPUT_DIR = Path("/path/to/umls_preprocessing/output")
 DATASETS_BASE_DIR = Path("/path/to/your/datasets")
 ```
 
-### 3. Verify Setup
+### 3. Verify setup
 
 ```bash
 python config.py  # Shows configuration and file status
@@ -163,21 +163,11 @@ All scripts produce CSV files with a unified schema:
 |--------|-------------|
 | `term` | The medical term/mention |
 | `code` | UMLS CUI code(s) |
-| `langauge` | Language code (eng, fre, spa, ger, tur) |
-| `semantic_type` | UMLS semantic type(s) |
+| `langauge` | Language (eng, fre, spa, ger, tur) |
 | `semantic_group` | UMLS semantic group(s) |
 | `targe_ontologies` | Source ontologies |
-| `exact_match` | Exact match status (0-3) |
 | `source` | Dataset source identifier |
 
-### Exact match status codes
-
-| Code | Meaning |
-|------|---------|
-| 0 | Not in train/dev, not in target ontology |
-| 1 | In target ontology only |
-| 2 | In train/dev set only |
-| 3 | In both train/dev and target ontology |
 
 ## Dataset-specific notes
 
@@ -195,7 +185,7 @@ All scripts produce CSV files with a unified schema:
 - BRAT annotation format (.ann files)
 - French medical corpus (MEDLINE + EMEA)
 
-### MedUCD
+### Med-UCD
 - Excel files (codes.xlsx, labels.xlsx)
 - French medication terms with ATC codes
 - Split into train/dev/test (60/20/20)
@@ -218,18 +208,18 @@ All scripts produce CSV files with a unified schema:
 - Limited files, split by document
 - Requires `atc_map.json` and `icd10_map.json` for code mapping
 
-### Turkish LOINC
+### TLLV
 - Excel file with lab test mappings
-- Multiple columns concatenated for term
+- Multiple columns concatenated for the term
 - Split into train/dev/test (60/20/20)
 - Requires `loinc_map.json` for code mapping
 
 ### MANTRA-GSC
 - XML format with CUI annotations
 - Test-only dataset (no train/dev)
-- Multiligual: EN, DE, ES, FR
+- Multilingual: ENG, FRE, GER, SPA
 
 ### XL-BEL
 - Simple text format (CUI||term)
-- Test-only dataset
-- Multiligual: EN, DE, ES, TR
+- Test-only dataset (no train/dev)
+- Multilingual: ENG, GER, SPA, TUR
