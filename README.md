@@ -17,12 +17,9 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
                             ┌────────────▼─────────────┐
                             │  3. Candidate Retrieval  │
                             │                          │
-                            │  ┌─────────┐ ┌────────┐  │
-                            │  │  BM25   │ │ Dense  │  │
-                            │  │(Elastic)│ │(Embed) │  │
-                            │  └────┬────┘ └───┬────┘  │
-                            │       └─────┬────┘       │
-                            └─────────────┼────────────┘
+                            │       Discriminative     │
+                            │           LLMs           │
+                            └─────────────┬────────────┘
                                           │
                             ┌─────────────▼────────────┐
                             │  4. LLM Reranking        │
