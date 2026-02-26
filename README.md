@@ -1,8 +1,8 @@
 # Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization — A Multilingual Benchmarking and Behavioral Analysis
 
-A modular pipeline for **medical concept normalization** — mapping clinical and biomedical terms to standardized UMLS (Unified Medical Language System) concepts. The system leverages dense retrieval and LLM-based reranking across 10 datasets in 5 languages.
+A modular pipeline for biomedical concept normalization — mapping clinical and biomedical terms to standardized UMLS (Unified Medical Language System) concepts. The system combines dense retrieval with knowledge-enhanced LLM reranking, evaluated on MedLexAlign, a unified multilingual benchmark built from 10 datasets across 5 languages (English, French, German, Spanish, and Turkish).
 
-## Pipeline Overview
+## Pipeline overview
 
 <p align="center">
 <img width="2236" height="970" alt="overview" src="https://github.com/user-attachments/assets/fe8729b7-f740-4423-b0a4-8caead54ee0a" />
@@ -13,10 +13,10 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 
 | Module | Description |
 |--------|-------------|
-| [`umls_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | Extract definitions, semantic types, hierarchies, and preferred terms from UMLS RRF files |
-| [`dataset_preprocessing`](./dataset_preprocessing/) | Convert 10 biomedical NER/normalization datasets into a unified CSV format |
+| [`umls_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | Extract definitions, synonyms, semantic groups, hierarchies, and preferred terms from UMLS RRF files |
+| [`dataset_preprocessing`](./dataset_preprocessing/) | Convert 10 biomedical concept normalization datasets into a unified format |
 | [`bm25_retrieval`](./bm25_retrieval/) | BM25-based candidate retrieval using Elasticsearch |
-| [`generating_embeddings`](./generating_embeddings/) | Generate UMLS term embeddings with generative (Qwen) and discriminative (E5, BGE) models |
+| [`generating_embeddings`](./generating_embeddings/) | Generate UMLS term embeddings with generative and discriminative large langauge models |
 | [`llm_reranker`](./llm_reranker/) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
 
 ## Supported Datasets
@@ -24,17 +24,17 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 | Dataset | Language | Ontology |
 |---------|----------|----------|
 | BC5CDR | English | MeSH |
-| N2C2 | English | RxNorm, SNOMED |
+| N2C2 | English | RxNorm, SNOMED CT|
 | Quaero | French | UMLS |
-| MedUCD | French | ATC |
+| Med-UCD | French | ATC |
 | DisTEMIST | Spanish | SNOMED CT |
 | PharmaCoNER | Spanish | SNOMED CT |
 | BRONCO | German | ATC, ICD-10 |
 | TLLV | Turkish | LOINC |
-| MANTRA-GSC | Multilingual | MedDRA, MeSH, SNOMED |
+| MANTRA-GSC | Multilingual | MedDRA, MeSH, SNOMED CT |
 | XL-BEL | Multilingual | UMLS |
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 
@@ -49,7 +49,7 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 pip install -r requirements.txt
 ```
 
-### Step-by-Step Usage
+### Step-by-Step usage
 
 #### Step 1 — Preprocess UMLS
 
@@ -62,7 +62,7 @@ python run_all.py
 
 This produces: `umls_definitions.json`, `cui_semantic_mapping.json`, `umls_hierarchies.json`, `umls_preferred_terms.json`, and `umls_all_terms.jsonl`.
 
-#### Step 2 — Preprocess Datasets
+#### Step 2 — Preprocess datasets
 
 Convert raw datasets into a unified CSV format:
 
@@ -71,9 +71,9 @@ cd dataset_preprocessing
 python run_all.py
 ```
 
-Outputs unified CSVs with columns: `term`, `code`, `language`, `semantic_group`, `exact_match`, `source`.
+Outputs unified CSVs with columns: `term`, `code`, `language`, `semantic_group`, `source`.
 
-#### Step 3a — BM25 Retrieval
+#### Step 3a — BM25 retrieval
 
 Index UMLS terms in Elasticsearch, then retrieve candidates:
 
@@ -83,7 +83,7 @@ python query_bm25.py
 python eval.py
 ```
 
-#### Step 3b — Dense Retrieval
+#### Step 3b — Dense retrieval
 
 Generate embeddings for UMLS terms and query terms:
 
@@ -95,10 +95,11 @@ python embedder.py
 cd generating_embeddings/discriminative
 python embedder.py
 ```
+Store the embeddings in a Qdrant vector database and retrieve the terms most similar to the input query.
 
-#### Step 4 — LLM Reranking
+#### Step 4 — LLM reranking
 
-Rerank candidates using an LLM with UMLS feature ablation:
+Rerank candidates using an LLM with the UMLS kowledge:
 
 ```bash
 cd llm_reranker
@@ -107,7 +108,7 @@ python umls_candidate_reranker.py
 
 Runs a full experiment grid over top-k values × feature combinations × retrieval models.
 
-## Repository Structure
+## Repository structure
 
 ```
 /
@@ -159,9 +160,3 @@ Runs a full experiment grid over top-k values × feature combinations × retriev
     └── umls_candidate_reranker.py
 ```
 
-## Configuration
-
-All modules use **project-relative paths** by default — no hardcoded user paths. Each module's `config.py` can be customized via:
-
-- Direct editing of the config file
-- Environment variables (see each module's README for details)
