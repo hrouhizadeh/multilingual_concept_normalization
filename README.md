@@ -13,11 +13,11 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 
 | Module | Description |
 |--------|-------------|
-| [`umls_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | Extract definitions, synonyms, semantic groups, hierarchies, and preferred terms from UMLS RRF files |
-| [`dataset_preprocessing`](./dataset_preprocessing/) | Convert 10 biomedical concept normalization datasets into a unified format |
-| [`bm25_retrieval`](./bm25_retrieval/) | BM25-based candidate retrieval using Elasticsearch |
-| [`generating_embeddings`](./generating_embeddings/) | Generate UMLS term embeddings with generative and discriminative large langauge models |
-| [`llm_reranker`](./llm_reranker/) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
+| [`umls_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/umls_preprocess) | Extract definitions, synonyms, semantic groups, hierarchies, and preferred terms from UMLS RRF files |
+| [`dataset_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/dataset_preprocessing) | Convert 10 biomedical concept normalization datasets into a unified format |
+| [`bm25_retrieval`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | BM25-based candidate retrieval using Elasticsearch |
+| [`generating_embeddings`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/generating_embeddings) | Generate UMLS term embeddings with generative and discriminative large langauge models |
+| [`llm_reranker`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/llm_reranker) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
 
 ## Supported Datasets
 
