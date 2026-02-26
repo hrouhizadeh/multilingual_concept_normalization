@@ -1,4 +1,4 @@
-# BM25 Retrieval Pipeline
+# BM25 retrieval pipeline
 
 ## Overview
 
@@ -18,7 +18,7 @@ This module performs **BM25-based candidate retrieval** from an Elasticsearch in
 - **Elasticsearch** running and accessible (default: `http://localhost:9400`)
 - An indexed corpus with document IDs corresponding to CUIs
 
-### Python Dependencies
+### Python dependencies
 
 ```bash
 pip install elasticsearch pandas
@@ -46,9 +46,9 @@ export BM25_INPUT_PATH=/your/custom/input/path
 export BM25_OUTPUT_BASE=/your/custom/output/path
 ```
 
-## Input Format
+## Input format
 
-Input CSV files must contain at minimum:
+Input CSV files must contain at a minimum:
 
 - `term` — the query text to search
 - `code` — ground-truth CUI(s) (as a list) for evaluation
@@ -56,7 +56,7 @@ Input CSV files must contain at minimum:
 
 ## Usage
 
-### 1. Run BM25 Retrieval
+### 1. Run BM25 retrieval
 
 ```bash
 python query_bm25.py
@@ -68,7 +68,7 @@ This will:
 3. Query Elasticsearch for each term using BM25
 4. Save results with `retrieved_cuis` and `retrieved_cuis` columns to `SAVE_PATH`
 
-### 2. Evaluate Results
+### 2. Evaluate results
 
 Update the `folder` variable in `eval.py` to point to your output directory, then run:
 
@@ -78,21 +78,9 @@ python eval.py
 
 This computes **Recall@k** for k ∈ {1, 3, 5, 10} across all output CSV files and saves a summary to `recall_summary_with_counts.csv`.
 
-## Output Format
+## Output format
 
 Each output CSV contains the original columns plus:
 
 - `candidate_cuis` — list of retrieved CUI IDs ranked by BM25 score
 - `candidate_scores` — corresponding BM25 scores
-
-## Example Workflow
-
-```bash
-# 1. Ensure Elasticsearch is running with your index
-# 2. Configure paths in config.py
-# 3. Run retrieval
-python query_bm25.py
-
-# 4. Evaluate
-python eval.py
-```
