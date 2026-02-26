@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UMLS All Terms Extractor
+UMLS all terms extractor
 
 Reads the UMLS MRCONSO.RRF file and creates a JSONL (JSON Lines) file
 with comprehensive term data for each CUI.
