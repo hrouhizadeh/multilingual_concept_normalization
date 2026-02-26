@@ -60,28 +60,6 @@ umls_preprocessing/
             └── SemGroups.txt  # Required for semantic groups
 ```
 
-### 3. Verify setup
-
-```bash
-python config.py  # Shows configuration and file status
-```
-
-Example output:
-```
-UMLS preprocessing configuration
-================================
-Project root:     /path/to/umls_preprocessing
-UMLS META dir:    /path/to/umls_preprocessing/data/umls/META
-Output dir:       /path/to/umls_preprocessing/output
-
-Input files:
-  MRCONSO.RRF:    /path/to/.../MRCONSO.RRF ✓
-  MRDEF.RRF:      /path/to/.../MRDEF.RRF ✓
-  MRREL.RRF:      /path/to/.../MRREL.RRF ✓
-  MRSTY.RRF:      /path/to/.../MRSTY.RRF ✓
-  SemGroups.txt:  /path/to/.../SemGroups.txt ✓
-```
-
 ## Usage
 
 ### Run all scripts
@@ -114,7 +92,7 @@ python scripts/extract_hierarchies.py
 # Extract preferred terms
 python scripts/extract_preferred_terms.py
 
-# Extract all terms (memory intensive)
+# Extract all terms 
 python scripts/extract_all_terms.py
 ```
 
@@ -209,18 +187,6 @@ UMLS_META_DIR = Path("/your/custom/path/to/META")
 # Custom output directory
 OUTPUT_DIR = Path("/your/custom/output/path")
 ```
-
-## Memory Requirements
-
-| Script | Approximate RAM |
-|--------|----------------|
-| extract_definitions.py | ~2 GB |
-| extract_semantic_types.py | ~1 GB |
-| extract_hierarchies.py | ~4 GB |
-| extract_preferred_terms.py | ~4 GB |
-| extract_all_terms.py | ~16 GB |
-
-For systems with limited RAM, run `extract_all_terms.py` separately or skip it:
 
 ```bash
 python run_all.py --skip-all-terms
