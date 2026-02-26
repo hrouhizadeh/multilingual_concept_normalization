@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UMLS Preferred Term Extractor
+UMLS preferred term extractor
 
 Reads the UMLS MRCONSO.RRF file and creates a JSON file with CUI as key
 and preferred term as value.
