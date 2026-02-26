@@ -10,14 +10,14 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 
 
 ## Modules
-
 | Module | Description |
 |--------|-------------|
-| [`umls_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/umls_preprocess) | Extract definitions, synonyms, semantic groups, hierarchies, and preferred terms from UMLS RRF files |
-| [`dataset_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/dataset_preprocessing) | Convert 10 biomedical concept normalization datasets into a unified format |
-| [`bm25_retrieval`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | BM25-based candidate retrieval using Elasticsearch |
-| [`generating_embeddings`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/generating_embeddings) | Generate UMLS term embeddings with generative and discriminative large langauge models |
-| [`llm_reranker`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/llm_reranker) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
+| [`umls_preprocess`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/umls_preprocess) | Extract definitions, synonyms, semantic groups, hierarchies, and preferred terms from UMLS RRF files |
+| [`dataset_prepocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/dataset_prepocessing) | Convert 10 biomedical concept normalization datasets into a unified format |
+| [`bm25`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | BM25-based candidate retrieval using Elasticsearch |
+| [`embedding_generation`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/embedding_generation) | Generate UMLS term embeddings with generative and discriminative large language models |
+| [`LLMs_as_rerankers`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/LLMs_as_rerankers) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
+
 
 ## Supported Datasets
 
