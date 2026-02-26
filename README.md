@@ -5,7 +5,7 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 ## Pipeline overview
 
 <p align="center">
-<img width="2236" height="970" alt="overview" src="https://github.com/user-attachments/assets/fe8729b7-f740-4423-b0a4-8caead54ee0a" />
+<img width="1860" height="769" alt="OV" src="https://github.com/user-attachments/assets/cc7615ea-f448-45dd-980e-2e89f7030aa5" />
 </p>
 
 
