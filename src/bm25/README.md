@@ -77,10 +77,3 @@ python eval.py
 ```
 
 This computes **Recall@k** for k ∈ {1, 3, 5, 10} across all output CSV files and saves a summary to `recall_summary_with_counts.csv`.
-
-## Output format
-
-Each output CSV contains the original columns plus:
-
-- `candidate_cuis` — list of retrieved CUI IDs ranked by BM25 score
-- `candidate_scores` — corresponding BM25 scores
