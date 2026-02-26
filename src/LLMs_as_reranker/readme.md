@@ -1,4 +1,4 @@
-# LLM reranker
+# LLMs as reranker
 
 Knowledge-enhanced candidate reranking for biomedical concept normalization using generative LLMs. This module takes dense retrieval candidates and reranks them by enriching each candidate with structured UMLS knowledge and prompting a generative LLM to select the best match.
 
