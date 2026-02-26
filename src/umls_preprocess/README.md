@@ -1,6 +1,6 @@
 # UMLS preprocessing
 
-A collection of Python scripts to extract and preprocess data from UMLS (Unified Medical Language System) RRF files into JSON format for downstream NLP tasks.
+A collection of Python scripts to extract and preprocess data from UMLS (Unified Medical Language System) RRF files into JSON format for downstream tasks of the pipeline.
 
 ## Overview
 
