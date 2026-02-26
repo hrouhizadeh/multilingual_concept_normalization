@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-UMLS Definition Extractor
+UMLSd efinition extractor
 
 Reads the UMLS MRDEF.RRF file and creates a JSON file grouped by CUI and source vocabulary.
 
