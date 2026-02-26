@@ -16,7 +16,7 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 | [`dataset_preprocessing`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/dataset_prepocessing) | Convert 10 biomedical concept normalization datasets into a unified format |
 | [`bm25`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/bm25) | BM25-based candidate retrieval using Elasticsearch |
 | [`embedding_generation`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/embedding_generation) | Generate UMLS term embeddings with generative and discriminative large language models |
-| [`LLMs_as_rerankers`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/LLMs_as_rerankers) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
+| [`LLMs_as_reranker`](https://github.com/hrouhizadeh/multilingual_concept_normalization/tree/main/src/LLMs_as_reranker) | LLM-based reranking of candidate concepts using UMLS features and chain-of-thought reasoning |
 
 
 ## Supported datasets
@@ -28,7 +28,7 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 | Quaero | French | UMLS |
 | Med-UCD | French | ATC |
 | DisTEMIST | Spanish | SNOMED CT |
-| PharmaCoNER | Spanish | SNOMED CT |
+| Pharma | Spanish | SNOMED CT |
 | BRONCO | German | ATC, ICD-10 |
 | TLLV | Turkish | LOINC |
 | MANTRA-GSC | Multilingual | MedDRA, MeSH, SNOMED CT |
@@ -44,7 +44,7 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 - GPU(s) (for embedding generation and LLM reranking)
 
 
-### Step-by-Step usage
+### Step-by-step usage
 
 #### Step 1 — Preprocess UMLS
 
@@ -92,13 +92,13 @@ python embedder.py
 ```
 Store the embeddings in a Qdrant vector database and retrieve the terms most similar to the input query.
 
-#### Step 4 — LLM reranking
+#### Step 4 — LLMs as reranker
 
-Rerank candidates using an LLM with the UMLS kowledge:
+Rerank candidates via knowledge-enhanced LLMs:
 
 ```bash
 cd llm_reranker
-python umls_candidate_reranker.py
+python reranker.py
 ```
 
 Runs a full experiment grid over top-k values × feature combinations × retrieval models.
@@ -150,8 +150,8 @@ Runs a full experiment grid over top-k values × feature combinations × retriev
 │       ├── utils.py
 │       └── embedder.py
 │
-└── llm_reranker/                      # Step 4: LLM reranking
+└── llms_as_reranker/                     Step 4: LLM reranking
     ├── config.py
-    └── umls_candidate_reranker.py
+    └── reranker.py
 ```
 
