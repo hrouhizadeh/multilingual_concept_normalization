@@ -4,30 +4,10 @@ A modular pipeline for **medical concept normalization** — mapping clinical an
 
 ## Pipeline Overview
 
-```
-┌─────────────────────┐     ┌──────────────────────────┐
-│  1. UMLS            │     │  2. Dataset              │
-│     Preprocessin    │────▶│     Preprocessing        │
-│                     │     │                          │
-│  .RRF files → JSON  │     │  10 datasets → unified   │
-│  (definitions,      │     │  CSV format              │
-│   hierarchies, etc.)│     │                          │
-└─────────────────────┘     └────────────┬─────────────┘
-                                         │
-                            ┌────────────▼─────────────┐
-                            │  3. Candidate Retrieval  │
-                            │                          │
-                            │       Discriminative     │
-                            │           LLMs           │
-                            └─────────────┬────────────┘
-                                          │
-                            ┌─────────────▼────────────┐
-                            │  4. LLM Reranking        │
-                            │                          │
-                            │  UMLS-enriched prompts   │
-                            │  + feature ablation      │
-                            └──────────────────────────┘
-```
+<p align="center">
+<img width="2236" height="970" alt="overview" src="https://github.com/user-attachments/assets/fe8729b7-f740-4423-b0a4-8caead54ee0a" />
+</p>
+
 
 ## Modules
 
