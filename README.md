@@ -1,6 +1,6 @@
 # Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization — A Multilingual Benchmarking and Behavioral Analysis
 
-A modular pipeline for **medical concept normalization** — mapping clinical and biomedical terms to standardized UMLS (Unified Medical Language System) concepts. The system combines lexical retrieval, dense retrieval, and LLM-based reranking across 10 datasets in 5 languages.
+A modular pipeline for **medical concept normalization** — mapping clinical and biomedical terms to standardized UMLS (Unified Medical Language System) concepts. The system leverages dense retrieval and LLM-based reranking across 10 datasets in 5 languages.
 
 ## Pipeline Overview
 
