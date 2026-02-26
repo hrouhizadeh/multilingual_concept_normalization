@@ -5,7 +5,7 @@ UMLS preferred term extractor
 Reads the UMLS MRCONSO.RRF file and creates a JSON file with CUI as key
 and preferred term as value.
 
-MRCONSO.RRF Format (pipe-delimited):
+MRCONSO.RRF format (pipe-delimited):
     Column 0:  CUI     - Concept Unique Identifier
     Column 1:  LAT     - Language
     Column 2:  TS      - Term Status (P = Preferred)
