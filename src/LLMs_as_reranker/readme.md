@@ -58,7 +58,7 @@ CSV files from the dense retrieval stage with at minimum these columns:
 ### Basic usage
 
 ```bash
-python rerank.py \
+python reranker.py \
     --input-dir outputs/dense_retrieval \
     --output-dir outputs/reranker \
     --umls-dir data/umls
@@ -67,7 +67,7 @@ python rerank.py \
 ### Custom model and top-K
 
 ```bash
-python rerank.py \
+python reranker.py \
     --model Qwen/Qwen3-32B \
     --top-k 10 25 50 \
     --umls-dir data/umls
@@ -79,10 +79,10 @@ Run specific UMLS knowledge combinations:
 
 ```bash
 # Single combination
-python rerank.py --features "synonyms,hierarchy"
+python reranker.py --features "synonyms,hierarchy"
 
 # Multiple combinations (grid search)
-python rerank.py \
+python reranker.py \
     --features \
         "No_umls_knowledge" \
         "definition" \
@@ -101,13 +101,13 @@ Available features: `preferred_term`, `synonyms`, `semantic_groups`, `definition
 Control how many synonyms and hierarchy terms are included per candidate:
 
 ```bash
-python rerank.py --max-synonyms 10 --max-hierarchy 10
+python reranker.py --max-synonyms 10 --max-hierarchy 10
 ```
 
 ### Process specific models and splits
 
 ```bash
-python rerank.py \
+python reranker.py \
     --dr-llms bge-m3 e5-mistral \
     --splits test dev
 ```
@@ -115,13 +115,13 @@ python rerank.py \
 ### Disable thinking mode
 
 ```bash
-python rerank.py --no-thinking
+python reranker.py --no-thinking
 ```
 
 ### All options
 
 ```bash
-python rerank.py --help
+python reranker.py --help
 ```
 
 ## Configuration
@@ -163,9 +163,9 @@ Each output CSV contains all original columns plus:
 ## Project structure
 
 ```
-llm_reranker/
+llms_as_reranker/
 ├── README.md          # This file
 ├── config.py          # Default configuration
-├── rerank.py          # Main reranking script
+├── reranker.py        # Main reranking script
 └── requirements.txt   # Python dependencies
 ```
