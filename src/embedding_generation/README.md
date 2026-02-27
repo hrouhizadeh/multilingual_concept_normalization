@@ -87,7 +87,7 @@ config = EmbeddingConfig(
     output_dir="embeddings/custom-output",
     
     # Columns to skip
-    exclude_columns=["word", "CUI", "ENG", "FRE", "GER", "SPA", "TUR"],
+    exclude_columns=["term", "CUI", "ENG", "FRE", "GER", "SPA", "TUR"],
 )
 ```
 
@@ -117,7 +117,6 @@ config = EmbeddingConfig(
 
 | Model | HuggingFace ID | Parameters |
 |-------|----------------|------------|
-| Qwen3-Embedding-0.6B | `Qwen/Qwen3-Embedding-0.6B` | 0.6B |
 | Qwen3-Embedding-4B | `Qwen/Qwen3-Embedding-4B` | 4B |
 | Qwen3-Embedding-8B | `Qwen/Qwen3-Embedding-8B` | 8B |
 
@@ -125,9 +124,14 @@ config = EmbeddingConfig(
 
 | Alias | HuggingFace ID |
 |-------|----------------|
-| `e5-large` | `intfloat/multilingual-e5-large` |
-| `bert-base` | `google-bert/bert-base-uncased` |
-| `mpnet` | `sentence-transformers/all-mpnet-base-v2` |
+| `bge-m3` | `BAAI/bge-m3` |
+| `e5` | `intfloat/multilingual-e5-large` |
+| `e5-mistral` | `intfloat/e5-mistral-7b-instruct` |
+| `kalm-gemma` | `tencent/KaLM-Embedding-Gemma3-12B-2511` |
+| `nemotron` | `nvidia/llama-embed-nemotron-8b` |
+| `qwen3-4b-em` | `Qwen/Qwen3-Embedding-4B` |
+| `qwen3-8b-em` | `Qwen/Qwen3-Embedding-8B` |
+| `voyage4` | `voyageai/voyage-4-nano` |
 
 You can also use any model from HuggingFace that is compatible with SentenceTransformers.
 
@@ -213,7 +217,7 @@ print(f"Embedding dim: {embedder.embedding_dimension}")
 from discriminative.config import EmbeddingConfig, MODELS
 from discriminative.embedder import run_embedding_pipeline
 
-models_to_run = ["e5-large", "bge-m3", "minilm-l6"]
+models_to_run = ["nemotron"]
 
 for model_alias in models_to_run:
     print(f"\n{'='*50}")
@@ -237,7 +241,7 @@ The input CSV file should have the following structure:
 | diabetes | ["C0011847"] | 1 | 0 | ... | 1 | 1 | ... |
 | hypertension | ["C0020538"] | 1 | 1 | ... | 1 | 0 | ... |
 
-- `word`: The medical term to embed
+- `term`: The medical term to embed
 - `CUI`: List of UMLS Concept Unique Identifiers (as string representation of list)
 - Binary columns (1/0): Indicate which vocabularies/ontologies the term belongs to
 
