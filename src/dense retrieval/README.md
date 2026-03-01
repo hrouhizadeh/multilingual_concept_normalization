@@ -44,7 +44,7 @@ pip install -r requirements.txt
 │   ├── umls2025_terms_ontologies.csv
 │   ├── umls_mappings/
 │   │   └── cui_semantic_mapping.json
-│   └── splits/
+│   └── medlexalign/
 │       ├── train.csv
 │       ├── dev.csv
         └── test.csv
@@ -79,7 +79,7 @@ qdrant_collection_name = "nvidiallama"
 qdrant_upload_batch_size = 200
 
 # --- Step 3: Query / Retrieval ---
-query_data_dir = "data/splits"
+query_data_dir = "data/medlexalign"
 query_output_dir = "outputs/dr_output"
 query_splits = ["test"]
 query_top_k_fetch = 500
