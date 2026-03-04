@@ -112,7 +112,7 @@ Runs a full experiment grid over top-k values × feature combinations × retriev
 ## Repository structure
 
 ```
-/
+.
 ├── README.md                          # This file
 ├── requirements.txt
 │
