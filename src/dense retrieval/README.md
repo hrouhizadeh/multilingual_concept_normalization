@@ -145,4 +145,4 @@ The CSV contains UMLS terms with their CUI codes. The remaining columns are onto
 
 | term | code | source | semantic_group | retrieved_codes | retrieved_scores |
 |---|---|---|---|---|---|
-| heart attack | ['C0027051'] | bc5cdr | ['DISO'] | ['C0027051', ...] | [0.95, ...] |
+| heart attack | ['C0027051'] | bc5cdr | ['Disorders'] | ['C0027051', ...] | [0.95, ...] |
