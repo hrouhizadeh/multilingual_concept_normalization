@@ -182,9 +182,9 @@ Our paper has been accepted for publication in *npj Digital Medicine* (2026). If
 
 ```bibtex
 @article{rouhizadeh2026knowledge,
-  title={Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization — A Multilingual Benchmarking and Behavioral Analysis},
+  title={{Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization -- A Multilingual Benchmarking and Behavioral Analysis}},
   author={Rouhizadeh, Hossein and Yazdani, Anthony and Zhang, Boya and Vicente Alvarez, David and Hueser, Matthias and Vanobberghen, Alexandre and Yang, Rui and Li, Huitao and Liu, Nan and Walter, Andreas and Teodoro, Douglas},
-  journal={npj Digital Medicine},
+  journal={{npj} Digital Medicine},
   year={2026},
-  note={Accepted for publication}
+  note={In press}
 }
