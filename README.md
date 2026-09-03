@@ -178,7 +178,7 @@ Runs a full experiment grid over top-k values × feature combinations × retriev
 
 ## Citation
 
-If you use this code or benchmark in your research, please cite our paper (currently under review):
+Our paper has been accepted for publication in *npj Digital Medicine* (2026). If you use this code or benchmark in your research, please cite:
 
 ```bibtex
 @article{rouhizadeh2026knowledge,
