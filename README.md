@@ -1,5 +1,6 @@
 # Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization — A Multilingual Benchmarking and Behavioral Analysis
-
+> 📄 **Accepted for publication in _npj Digital Medicine_ (2026).**
+> 
 A modular pipeline for biomedical concept normalization — mapping clinical and biomedical terms to standardized UMLS (Unified Medical Language System) concepts. The system combines dense retrieval with knowledge-enhanced LLM reranking, evaluated on MedLexAlign, a unified multilingual benchmark built from 10 datasets across 5 languages (English, French, German, Spanish, and Turkish).
 
 ## Pipeline overview
