@@ -1,7 +1,9 @@
 # Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization — A Multilingual Benchmarking and Behavioral Analysis
-> 📄 **Accepted for publication in _npj Digital Medicine_ (2026).**
-> 
+
 A modular pipeline for biomedical concept normalization — mapping clinical and biomedical terms to standardized UMLS (Unified Medical Language System) concepts. The system combines dense retrieval with knowledge-enhanced LLM reranking, evaluated on MedLexAlign, a unified multilingual benchmark built from 10 datasets across 5 languages (English, French, German, Spanish, and Turkish).
+
+For further details refer to the [paper](https://www.nature.com/articles/s41746-026-03224-x).
+
 
 ## Pipeline overview
 
@@ -43,7 +45,6 @@ A modular pipeline for biomedical concept normalization — mapping clinical and
 - [UMLS License](https://uts.nlm.nih.gov/uts/) (for UMLS data access)
 - Elasticsearch (for BM25 retrieval)
 - Qdrant (for dense retrieval)
-- GPU(s) (for embedding generation and LLM reranking)
 
 
 ### Step-by-step usage
@@ -178,13 +179,16 @@ Runs a full experiment grid over top-k values × feature combinations × retriev
 
 ## Citation
 
-Our paper has been accepted for publication in *npj Digital Medicine* (2026). If you use this code or benchmark in your research, please cite:
+If you find this repository, our dataset, or the pipeline helpful in your research, please cite:
 
 ```bibtex
-@article{rouhizadeh2026knowledge,
-  title={{Knowledge-Enhanced LLMs for Multilingual Biomedical Concept Normalization -- A Multilingual Benchmarking and Behavioral Analysis}},
-  author={Rouhizadeh, Hossein and Yazdani, Anthony and Zhang, Boya and Vicente Alvarez, David and Hueser, Matthias and Vanobberghen, Alexandre and Yang, Rui and Li, Huitao and Liu, Nan and Walter, Andreas and Teodoro, Douglas},
-  journal={npj Digital Medicine},
-  year={2026},
-  note={In press}
+@article{Rouhizadeh2026,
+  author    = {Rouhizadeh, Hossein and Yazdani, Anthony and Zhang, Boya and Vicente Alvarez, David and H{\"u}ser, Matthias and Vanobberghen, Alexandre and Yang, Rui and Li, Huitao and Liu, Nan and Walter, Andreas and Teodoro, Douglas},
+  title     = {Knowledge-enhanced LLMs for multilingual biomedical concept normalization: a multilingual benchmarking and behavioral analysis},
+  journal   = {npj Digital Medicine},
+  year      = {2026},
+  month     = {sep},
+  issn      = {2398-6352},
+  doi       = {10.1038/s41746-026-03224-x},
+  url       = {https://doi.org/10.1038/s41746-026-03224-x},
 }
